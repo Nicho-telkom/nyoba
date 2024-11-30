@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="test css.css">
+</head>
+<body>
+  <div class="container">
+    <div class="product-info">
+      <a href="#" class="back-link">← Back to product</a>
+      <h2>Product Information & Review</h2>
+      <div class="product-item">
+        <img src="../images/Rectangle 5.png" alt="Brooklyn Jacket">
+        <div class="product-details">
+          <h3>Brooklyn Jacket</h3>
+          <p>Rp 499,000,00</p>
+          <div class="quantity">
+            <button>-</button>
+            <input type="number" value="1" min="1">
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="../images/image.png" alt="Draped Blouse">
+        <div class="product-details">
+          <h3>Draped Blouse</h3>
+          <p>Rp 479,000,00</p>
+          <div class="quantity">
+            <button>-</button>
+            <input type="number" value="1" min="1">
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+      <div class="shipping">
+        <h3>Pengiriman</h3>
+        <label>
+          <input type="radio" name="shipping" checked>
+          Pengiriman Cepat (Rp 20,000,00)
+        </label>
+        <label>
+          <input type="radio" name="shipping">
+          Pengiriman Gratis
+        </label>
+      </div>
+    </div>
+    <div class="payment-info">
+      <h2>Detail Pembayaran</h2>
+      <form>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+        
+        <h3>Payment Method</h3>
+        <div class="payment-method">
+          <button type="button">Mandiri</button>
+          <button type="button">Dana</button>
+          <button type="button">BNI</button>
+          <button type="button">QRIS</button>
+        </div>
+        
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="Masukkan alamat"></textarea>
+        
+        <div class="summary">
+          <p>Sub Total: <span>Rp 499,000,00</span></p>
+          <p>Pengiriman: <span>Rp 20,000,00</span></p>
+          <p>Diskon: <span>Rp 0</span></p>
+          <p>Total: <strong>Rp 519,000,00</strong></p>
+        </div>
+        <button class="pay-btn"><a href="payment-success.html" style="color: inherit; text-decoration: none;">Bayar Rp 519,000,00</a></button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.payment-method button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>
